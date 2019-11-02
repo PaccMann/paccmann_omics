@@ -1,0 +1,12 @@
+dist: trusty
+
+services:
+  - docker
+
+before_script:
+  - docker pull drugilsberg/rdkit-ubuntu:latest
+  - docker build -f .travis/Dockerfile -t omics .
+
+script:
+  - docker run -it omics python3 -c "import paccmann_omics"
+  - docker run -it omics python3 examples/train_vae.py -h

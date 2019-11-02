@@ -1,0 +1,29 @@
+{
+    "input_size": 2128,
+    "latent_size": 128,
+    "hidden_sizes_encoder": [
+        1024,
+        512,
+        256,
+        200
+    ],
+    "activation_fn": "relu",
+    "dropout": 0.2,
+    "hidden_sizes_decoder": [
+        200,
+        256,
+        512,
+        1024
+    ],
+    "kl_annealing": 500,
+    "batch_size": 64,
+    "lr": 0.003,
+    "alpha": 0.5,
+    "beta": 1.0,
+    "DAE_mask": 0.2,
+    "DAE_noise": 0.2,
+    "optimizer": "Adam",
+    "reconstruction_loss": "mse",
+    "epochs": 2000,
+    "save_model": 250
+}
