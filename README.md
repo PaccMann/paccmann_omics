@@ -44,6 +44,8 @@ usage: train_vae.py [-h]
                     train_filepath val_filepath gene_filepath model_path
                     params_filepath training_name
 
+Omics VAE training script.
+
 positional arguments:
   train_filepath   Path to the training data (.csv).
   val_filepath     Path to the validation data (.csv).

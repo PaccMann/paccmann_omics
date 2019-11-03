@@ -19,7 +19,7 @@ from paccmann_omics.utils.utils import VAETracker, augment, get_device
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 # yapf: disable
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description='Omics VAE training script.')
 parser.add_argument(
     'train_filepath', type=str,
     help='Path to the training data (.csv).'
