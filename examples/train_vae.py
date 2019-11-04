@@ -6,13 +6,15 @@ import logging
 import os
 import pickle
 import sys
+# The logger imports tensorflow which may need to be imported before torch
+# (importing tensorflow after torch causes problems dependent on the versions)
+from paccmann_omics.utils.logger import Logger
 import torch
 from pytoda.datasets import GeneExpressionDataset
 from paccmann_omics.decoders import DECODER_FACTORY
 from paccmann_omics.encoders import ENCODER_FACTORY
 from paccmann_omics.generators.vae import VAE
 from paccmann_omics.utils.hyperparams import OPTIMIZER_FACTORY
-from paccmann_omics.utils.logger import Logger
 from paccmann_omics.utils.utils import VAETracker, augment, get_device
 
 # setup logging
