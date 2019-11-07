@@ -1,12 +1,14 @@
 dist: trusty
-
 services:
-  - docker
-
+- docker
 before_script:
-  - docker pull drugilsberg/rdkit-ubuntu:latest
-  - docker build -f .travis/Dockerfile -t omics .
-
+- docker pull drugilsberg/rdkit-ubuntu:latest
+- docker build -f .travis/Dockerfile -t omics .
 script:
-  - docker run -it omics python3 -c "import paccmann_omics"
-  - docker run -it omics python3 examples/train_vae.py -h
+- docker run -it omics python3 -c "import paccmann_omics"
+- docker run -it omics python3 examples/train_vae.py -h
+notifications:
+  slack:
+    secure: VBbvxdL4hFVzTrCaEYWZ02u/7eAQimkMGAJMuwZVyCRQQzPILoVl0LDTTzb+OB7Mu0rZmZ2Cbu/AgrY+P9g/0lFp+CIZfpLHUt253Zr0mwhKzkmMgWCFl4Odk7uhXIRkrUj/ceD6JmzyRmW4RkpalxhB22SpkSjY18YeRsUXD/r7Ts4/dXniT2cfuWAc2Qn38rXi/XZYUFGZnV+5tgEpngSRGEUScpb4PB+6DKKddDrxhODdJdwu4b4WJOwxPhMgmO//95icP2yuPEb6rlDhgyRvHDzDt/A39qf+lUlw2dmdDTNZDVdYfeJM7RKJ6FoEfkgcgc0+xCW8HWIPzOXq5ZALrNtlb5xw26w+KKvMGc8/t7QOnFA9/ke8nKbP7FUxu9Qqrv0YeoAiClpqaeXzB6EymAiUNnehFEEs4ArezCOvr1VvY2M5ZTxIHpHNU1PvdL/CbUvdBSW1u5P2h5hSNnyBRpnld+QHmGpiKhDUwuFZDK/sdzy2XbCmGXJFr4gQIf9YKupcARzeaYIPXv7tbJI5+vRun+lkTyLPiIX8EyxelWJshbaDjqlbnaynHZ775tUkiUgqDMYZZP2tp2noAsGtt+Fq3tY4E0mQOD6H25+1kz+zjzpqlgwOxPNnugcG2SbhCuUu80vcmG8w2MiG85SZ0o9cbpF4pBwGAEXdl9k=
+    on_success: always
+    on_failure: always
