@@ -12,13 +12,7 @@ setup(
         'jab@zurich.ibm.com, ali.oskooei@gmail.com, '
         'drugilsberg@gmail.com, joriscadow@gmail.com'
     ),
-    install_requires=[
-        'numpy',
-        'scipy',
-        'tensorflow>=1.10.0,<2.0',
-        'torch>=1.0.0'
-    ],
+    install_requires=['numpy', 'scipy', 'torch>=1.0.0'],
     packages=find_packages('.'),
     zip_safe=False,
 )
-

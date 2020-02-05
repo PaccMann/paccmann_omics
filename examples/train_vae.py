@@ -6,9 +6,6 @@ import logging
 import os
 import pickle
 import sys
-# The logger imports tensorflow which may need to be imported before torch
-# (importing tensorflow after torch causes problems dependent on the versions)
-from paccmann_omics.utils.logger import Logger
 import torch
 from pytoda.datasets import GeneExpressionDataset
 from paccmann_omics.decoders import DECODER_FACTORY
@@ -109,8 +106,6 @@ def main(
         f'match actual data shapes ({t_s}).'
     )
 
-    # Set the tensorboard logger
-    tb_logger = Logger(os.path.join(model_dir, 'tb_logs'))
     device = get_device()
     save_top_model = os.path.join(model_dir, 'weights', '{}_{}_{}.pt')
     params.update({'save_top_model': save_top_model})
@@ -150,7 +145,7 @@ def main(
 
     epochs, latent_dim = params['epochs'], params['latent_size']
     tracker = VAETracker(
-        logger, tb_logger, params, train_loader, val_loader, latent_dim, epochs
+        logger, params, train_loader, val_loader, latent_dim, epochs
     )
 
     for epoch in range(epochs):

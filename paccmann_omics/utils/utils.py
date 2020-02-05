@@ -223,12 +223,10 @@ class VAETracker():
     """Class to track and log performance of a VAE."""
 
     def __init__(
-        self, logger, tb_logger, params, train_loader, val_loader, latent_size,
-        epochs
+        self, logger, params, train_loader, val_loader, latent_size, epochs
     ):
 
         self.logger = logger
-        self.tb_logger = tb_logger
         self.params = params
         self.train_loader = train_loader
         self.val_loader = val_loader
@@ -329,19 +327,6 @@ class VAETracker():
                 self.val_kl_a
             )
         )
-
-    def logg_tensorboard(self):
-        """TensorBoard logging of scalars."""
-        info = {
-            'train_rec': self.train_rec_a,
-            'train_kld': self.train_kl_a,
-            'train_loss': self.train_loss_a,
-            'val_rec': self.val_rec_a,
-            'val_kld': self.val_kl_a,
-            'val_loss': self.val_loss_a,
-        }
-        for tag, value in info.items():
-            self.tb_logger.scalar_summary(tag, value, self.epoch + 1)
 
     def save(self, encoder, decoder, model, metric, typ, val=None):
         encoder.save(
