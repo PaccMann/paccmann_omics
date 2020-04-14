@@ -353,7 +353,7 @@ class VAETracker():
         if self.val_kl_a < self.best_dict['min_kl']:
             self.best_dict['min_kl'] = self.val_kl_a
             self.best_dict['min_kl_rec'] = self.val_rec_a
-            self.save(encoder, decoder, model, 'kl', 'best', self.val_rec_a)
+            self.save(encoder, decoder, model, 'kl', 'best', self.val_kl_a)
             self.ep_kl = self.epoch
         if self.val_rec_a + self.val_kl_a < self.best_dict['min_sum']:
             self.best_dict['min_sum'] = self.val_rec_a + self.val_kl_a
