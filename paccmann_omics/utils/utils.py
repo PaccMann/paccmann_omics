@@ -307,7 +307,7 @@ class VAETracker():
 
         self.logger.info(
             "\t **** TRAINING ****   "
-            "Epoch [{0}/{1}], loss: {2:.1f}, rec: {3:.6f}, KLD: {4:.6f} "
+            "Epoch [{0}/{1}], loss: {2:.4f}, rec: {3:.6f}, KLD: {4:.6f} "
             "It took {5:.1f} secs.".format(
                 self.epoch + 1, self.epochs, self.train_loss_a,
                 self.train_rec_a, self.train_kl_a,
