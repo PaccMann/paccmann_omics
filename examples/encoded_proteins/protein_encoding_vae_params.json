@@ -1,0 +1,32 @@
+{
+    "input_size": 768,
+    "latent_size": 128,
+    "encoder_type": "dense",
+    "decoder_type": "dense",
+    "hidden_sizes_encoder": [
+        768,
+        512,
+        256
+    ],
+    "hidden_sizes_decoder": [
+        256,
+        512,
+        768
+    ],
+    "input_normalized": false,
+    "DAE_mask": 0.0,
+    "DAE_noise": 0.0,
+    "activation_fn": "relu",
+    "dropout": 0.2,
+    "batch_norm": true,
+    "optimizer": "Adam",
+    "lr": 0.003,
+    "reconstruction_loss": "mse",
+    "kld_loss": "kld",
+    "alpha": 0.5,
+    "beta": 1.0,
+    "kl_annealing": 20,
+    "epochs": 200,
+    "save_model": 20,
+    "batch_size": 64
+}
