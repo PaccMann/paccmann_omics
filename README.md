@@ -3,8 +3,8 @@
 
 Generative models of omic data for PaccMann^RL.
 
-`paccmann_omics` is a package to model omic data, currently generative models  
-of gene expression profiles.
+`paccmann_omics` is a package to model omic data, with examples for generative 
+models of gene expression profiles and encoded proteins (vector representations).
 
 ## Requirements
 
@@ -18,7 +18,7 @@ To run the example training script we provide environment files under `examples/
 Create a conda environment:
 
 ```sh
-conda env create -f examples/conda.yml
+conda env create -f examples/gene_expression/conda.yml
 ```
 
 Activate the environment:
@@ -39,7 +39,7 @@ In the `examples` directory is a training script `train_vae.py` that makes use
 of paccmann_omics.
 
 ```console
-(paccmann_omics) $ python examples/train_vae.py -h
+(paccmann_omics) $ python examples/gene_expression/train_vae.py -h
 usage: train_vae.py [-h]
                     train_filepath val_filepath gene_filepath model_path
                     params_filepath training_name
@@ -58,7 +58,7 @@ optional arguments:
   -h, --help       show this help message and exit
 ```
 
-`params_filepath` could point to [examples/example_params.json](examples/example_params.json), examples for other files can be downloaded from [here](https://ibm.box.com/v/paccmann-pytoda-data).
+`params_filepath` could point to [examples/gene_expression/example_params.json](examples/gene_expression/example_params.json), examples for other files can be downloaded from [here](https://ibm.box.com/v/paccmann-pytoda-data).
 
 ## References
 
