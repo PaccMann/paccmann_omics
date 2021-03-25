@@ -1,10 +1,11 @@
 [![Build Status](https://travis-ci.org/PaccMann/paccmann_omics.svg?branch=master)](https://travis-ci.org/PaccMann/paccmann_omics)
 # paccmann_omics
 
-Generative models of omic data for PaccMann^RL.
+Generative models of omic data for PaccMann<sup>RL</sup>.
 
 `paccmann_omics` is a package to model omic data, with examples for generative 
 models of gene expression profiles and encoded proteins (vector representations).
+For example, see our paper [_PaccMann<sup>RL</sup>: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning_](https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6) published in _iScience_
 
 ## Requirements
 
@@ -66,7 +67,7 @@ If you use `paccmann_omics` in your projects, please cite the following:
 
 ```bib
 @article{born2021paccmannrl,
-    title = {PaccMannRL: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning},
+    title = {PaccMann^{RL}: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning},
     journal = {iScience},
     volume = {24},
     number = {4},
