@@ -5,7 +5,9 @@ Generative models of omic data for PaccMann<sup>RL</sup>.
 
 `paccmann_omics` is a package to model omic data, with examples for generative 
 models of gene expression profiles and encoded proteins (vector representations).
-For example, see our paper [_PaccMann<sup>RL</sup>: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning_](https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6) published in _iScience_
+For example, see our papers:
+- [_PaccMann<sup>RL</sup>: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning_](https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6) (_iScience_, 2021). In there, we use a denoising, dense VAE to model gene expression profiles from TCGA (code in this repo). We then use these encodings to conditionally generate de novo molecules with high predicted efficacy against these cell types.
+- [Data-driven molecular design for discovery and synthesis of novel ligands: a case study on SARS-CoV-2](https://iopscience.iop.org/article/10.1088/2632-2153/abe808) (_Machine Learning: Science and Technology_, 2021). In there, we use a denoising, dense VAE to model proteins from UniProt (code in this repo). We then use a set of 41 SARS-CoV-2 related proteins to conditionally generate de novo molecules with high predicted binding affinity against these proteins.
 
 ## Requirements
 
@@ -66,17 +68,31 @@ optional arguments:
 If you use `paccmann_omics` in your projects, please cite the following:
 
 ```bib
-@article{born2021paccmannrl,
-    title = {PaccMann^{RL}: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning},
-    journal = {iScience},
-    volume = {24},
-    number = {4},
-    pages = {102269},
-    year = {2021},
-    issn = {2589-0042},
-    doi = {https://doi.org/10.1016/j.isci.2021.102269},
-    url = {https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6},
-    author = {Jannis Born and Matteo Manica and Ali Oskooei and Joris Cadow and Greta Markert and María {Rodríguez Martínez}},
-    keywords = {Complex System Biology, Systems Biology, Transcriptomics, Computer Science},
+@article{born2021datadriven,
+  author = {Born, Jannis and Manica, Matteo and Cadow, Joris and Markert, Greta and Mill, Nil Adell and Filipavicius, Modestas and Janakarajan, Nikita and Cardinale, Antonio and Laino, Teodoro and {Rodr{\'{i}}guez Mart{\'{i}}nez}, Mar{\'{i}}a},
+  doi = {10.1088/2632-2153/abe808},
+  issn = {2632-2153},
+  journal = {Machine Learning: Science and Technology},
+  number = {2},
+  pages = {025024},
+  title = {{Data-driven molecular design for discovery and synthesis of novel ligands: a case study on SARS-CoV-2}},
+  url = {https://iopscience.iop.org/article/10.1088/2632-2153/abe808},
+  volume = {2},
+  year = {2021}
 }
+
+@article{born2021paccmannrl,
+  title = {PaccMann\textsuperscript{RL}: De novo generation of hit-like anticancer molecules from transcriptomic data via reinforcement learning},
+  journal = {iScience},
+  volume = {24},
+  number = {4},
+  pages = {102269},
+  year = {2021},
+  issn = {2589-0042},
+  doi = {https://doi.org/10.1016/j.isci.2021.102269},
+  url = {https://www.cell.com/iscience/fulltext/S2589-0042(21)00237-6},
+  author = {Born, Jannis and Manica, Matteo and Oskooei, Ali and Cadow, Joris and Markert, Greta and {Rodr{\'{i}}guez Mart{\'{i}}nez}, Mar{\'{i}}a}
+}
+
+
 ```
