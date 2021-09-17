@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/PaccMann/paccmann_omics.svg?branch=master)](https://travis-ci.org/PaccMann/paccmann_omics)
+[![Build Status](https://github.com/PaccMann/paccmann_omics/actions/workflows/build.yml/badge.svg)](https://github.com/PaccMann/paccmann_omics/actions/workflows/build.yml)
 # paccmann_omics
 
 Generative models of omic data for PaccMann<sup>RL</sup>.
